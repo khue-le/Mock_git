@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/teacher/teacher_layout.css">
+<link rel="stylesheet" href="./css/teacher/materials_teacher.css">
+<script src="./js/jquery/jquery.min.js"></script>
+<script src="./js/bootstrap/bootstrap.min.js"></script>
+<script src="./js/js_layout.js"></script>
+<script src="./js/materials_teacher.js"></script>
+<title>Assignments-Teacher</title>
+<style type="text/css">
+.stOpen {
+	color: green;
+}
+
+.stClose {
+	color: yellow;
+}
+
+.stExp {
+	color: red;
+}
+
+a:hover {
+	text-decoration: none;
+	color: red;
+}
+
+hr {
+	width: 100%;
+	height: 1px;
+	background: gray;
+}
+
+.btnAnswer {
+	border: 1px solid #5bed2b;
+	background: #ffffff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ffffff),
+		to(#ffffff));
+	background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+	background: -moz-linear-gradient(top, #ffffff, #ffffff);
+	background: -ms-linear-gradient(top, #ffffff, #ffffff);
+	background: -o-linear-gradient(top, #ffffff, #ffffff);
+	padding: 10.5px 21px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+	-moz-box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+	box-shadow: rgba(0, 0, 0, 1) 0 1px 0;
+	text-shadow: rgba(0, 0, 0, .4) 0 1px 0;
+	color: #29de1f;
+	font-size: 14px;
+	font-family: Georgia, serif;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.btnAnswer:hover {
+	border-top-color: #44e817;
+	background: #44e817;
+	color: #ffffff;
+}
+
+.btnAnswer:active {
+	border-top-color: #1b435e;
+	background: #1b435e;
+}
+</style>
+<script type="text/javascript">
+	function textAreaAdjust(o) {
+		o.style.height = "1px";
+		o.style.height = (25 + o.scrollHeight) + "px";
+	}
+</script>
+</head>
+<body>
+	<div class="navbar-fixed-top row header_title">
+		<div class="col-md-2 left_leaning">
+			<p class="p_leaning">E-Leaning</p>
+		</div>
+		<div class="col-md-2 left_leaning">
+			<select>
+				<option>--Select course--</option>
+				<option>Course 1</option>
+				<option>Course 2</option>
+				<option>Course 3</option>
+				<option>Course 4</option>
+			</select>
+		</div>
+		<div class="col-md-8 right_leaning">
+			<div class="dropdown icon_user">
+				<button class="custom_button dropdown-toggle" type="button" id="user_profile"
+					data-toggle="dropdown">
+					<img src="./images/users.png" />
+				</button>
+				<ul class="dropdown-menu dropdown_note pull-right" id="dropdown_user" role="menu"
+					aria-labelledby="user_profile">
+					<li role="presentation"><a role="menuitem" href="#">Profile</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Help</a></li>
+				</ul>
+			</div>
+			<div class="dropdown icon_bell">
+				<button class="custom_button dropdown-toggle" type="button" id="note_bell"
+					data-toggle="dropdown">
+					<img src="./images/bell.png" />
+				</button>
+				<ul class="dropdown-menu dropdown_note pull-right" id="dropdown_bell" role="menu"
+					aria-labelledby="note_bell">
+					<li role="presentation"><a role="menuitem" href="#">Empty</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row content_body">
+		<div class="col-md-2 navbar_teacher">
+			<div class="item_navbar_teacher">
+				<a href="./home_teacher_list.html" class="custom_button"><img
+					src="./images/home.png" />Home</a>
+			</div>
+			<div class="item_navbar_teacher ">
+				<a href="./course_teacher.html" class="custom_button"><img
+					src="./images/course.png" />Course</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./students_teacher.html" class="custom_button "><img
+					src="./images/student.png" />Students</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./materials_teacher.html" class="custom_button"><img
+					src="./images/resources.png" />Materials</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./assignment_teacher.html" class="custom_button"><img
+					src="./images/assignment.png" />Assignment</a>
+			</div>
+			<div class="item_navbar_teacher item_navbar_teacher_active">
+				<a href="./discussion_teacher.html" class="custom_button"><img
+					src="./images/discussion.png" />Discussion</a>
+			</div>
+		</div>
+		<div class="col-md-9 list_course">
+			<div class="title_list_course">
+				<span>Discussions</span>
+			</div>
+			<div style="margin-top: 20px;">
+				<!--here is body content-->
+				<div style="min-height: 200px">
+					<p style="font-size: 15px; font-weight: bold; margin: 20px 0">[Help]: I can't
+						understand how people can be a superhero.</p>
+					<p style="font-size: 15px; color: gray;">Benjamin Preisler Herbst, 26, is not
+						allowed to change his first name to �Superhero�. The decision came as a shock, as
+						the Danish government recently OKed names including Balcony (for a girl), Gandalf,
+						Ninja and Legolas. �I fully understand that people under 18 should be protected from
+						being given silly names by their parents,� Herbst said. �But I think it should be up
+						to adults to change their own name to whatever they want.� But after a tense
+						four-month wait, Herbst was told that Superhero was �inappropriate�. �The word
+						superhero is the name of a fictional / non-existent figure who perform heroic
+						deeds,� the government said. �We do not believe that �Superhero� meets the criteria
+						for accreditation as a Christian name.� However, Herbst was adamant: �It would give
+						people a smile when I came into the bank and said, �Hi, my name is Superhero�. There
+						is nobody who doesn�t like superheroes. �The only ones who don�t are super
+						villains.�</p>
+				</div>
+				<hr>
+				<textarea onkeyup="textAreaAdjust(this)"
+					style="max-height: 150px; resize: none; width: 100%; overflow-y: auto;"></textarea>
+				<button style="margin: 10px 0 0 10px" class="btnAnswer">Answer</button>
+				<!--end-->
+			</div>
+		</div>
+	</div>
+	<div class="user_online">
+		<div class="dropup pull-right">
+			<button id="btnChat" class="btn btn-default dropdown-toggle" type="button"
+				data-toggle="dropdown">
+				<img src="./images/chat.png" />(4)
+			</button>
+			<ul class="dropdown-menu list_user_online">
+				<li>Tran Thi Bich Tram</li>
+				<li>Nguyen Thai Ha</li>
+				<li>Trinh Hong Nhan</li>
+				<li>Le Nguyen Khue</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

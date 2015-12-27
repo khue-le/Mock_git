@@ -1,0 +1,23 @@
+.custom_select {
+	color: #4C9E31;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+	text-align: center;
+	out-line: none;
+}
+
+.table_students {
+	margin-bottom: 0px;
+}
+
+.table_students th, td {
+	text-align: center;
+}
+
+.div_add_student {
+	background-color: #dff0d8;
+	text-align: center;
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+	padding-bottom: 15px;
+}

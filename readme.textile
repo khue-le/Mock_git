@@ -1,0 +1,23 @@
+﻿Khuê: Có một số điều về usecase của mình: Mình không làm usecase manage student và course bữa Trâm kêu đổi, vì vậy khi code mình 
+sẽ set cứng idCourse trước, ý tưởng là khi 1 giáo viên click vào course thì sẽ tạo (hoặc chỉnh sửa) session attribute idCourse.
+(12-12-2015 15:09:00)
+
+Khuê: Trong quá trình làm nhận ra cần phải thay đổi database để phù hợp. Đã update bản database mọi người đọc log để biết thêm.
+Mọi người thống nhất về việc này nhé: tên biến của database, html, attribute đều đặt chữ thường hết nhé. Còn lại đặt theo đúng
+convention của java.
+(14-12-2015 01:20:00)
+
+Trâm: Tui mới làm phần get List Course của 1 teacher, vs get ListStudent của một khóa học.
+Chỗ menuleft.jsp tui có làm đoạn js, là để cho các menu active. 
+Sau này mọi người làm thì ở controller request.setAtrribute("active",sothutu_menu), thì nó sẽ tự động active class đó nha!
+khỏi viết lại
+Còn phần thêm xóa sửa student đang add dô, mà sao nó báo lỗi miết.
+Nhớ dzô file xóa mật khẩu 123ab trc khi chạy.
+(15-12-2015)
+
+Trâm:Cái chỗ assignment có cần chỉnh sửa lại thêm cho nó quan hệ với lecture ko? theo ý kiến tui vậy, ko sửa cũng được. 
+(16-12-2015 00h)
+(Answwer: Trâm 16-12-2015 00h) Khuê: không cần nhé, vì làm assignment không liên quan đến lecture.
+(21-12-2015 3:35:00)
+
+Khuê: Resource content chắc đổi qua kiểu blob để lưu file type document(22-12-2015 3:12:00)

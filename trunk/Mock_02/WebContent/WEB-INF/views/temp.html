@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home page</title>
+<script src="ja/jquery.min.js"></script>
+<script src="ja/bootstrap.min.js"></script>
+<script src="ja/zabuto_calendar.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/zabuto_calendar.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script type="application/javascript">
+    function invokeCalendar(){
+    	$("#my-calendar").zabuto_calendar({
+   			nav_icon: {
+   		        prev: '<img src="images/left.png">',
+   		        next: '<img src="images/right.png">'
+   		    },
+   		 	today: true,
+   		 	action: function () {
+            	return myDateFunction(this.id, true);
+        	},
+        	action_nav: function () {
+            	return myNavFunction(this.id);
+        	},
+			ajax: {
+				url: "eventCourse"/*,
+				modal: true*/
+			},
+           	legend: [
+                     {type: "text", label: "Special event", badge: "00"},
+                     {type: "block", label: "Regular event"}
+                 ]
+   		});
+    }
+    $(document).ready(function () {
+        $("#date-popover").hide();
+        invokeCalendar();
+        $(document).on('click', '#btnSave', function(){
+        	var date = $("#modalDate").val();
+        	var title = $("#ipTitle").val();
+   		 	var content = $("#content").val();
+   			var important = $("#sel").val();
+   			var badge = false;
+   		 	if(important == '1'){
+   		 		badge = true;
+   		 	} 
+   		 	$.ajax({
+   		 	type: 'POST', 
+            url: 'handleEventSave', 
+            data: { "date": date,"title":title,"badge":badge,"body":content },
+            success: function () {
+            	location.reload(true);
+            }
+   		 	});
+        });
+        $(document).on('click', '#btnDelete', function(){
+        	var date = $("#modalDate").val();
+   		 	$.ajax({
+   		 	type: 'GET', 
+            url: 'handleEventDelete', 
+            data: { "date": date },
+            success: function () {
+            	location.reload(true);
+            }
+   		 	});
+        });
+    });
+    function myDateFunction(id, fromModal) {
+        $("#date-popover").hide();
+        /*if (fromModal) {
+            $("#" + id + "_modal").modal('hide');
+        }*/
+        var date = $("#" + id).data("date");
+        /*var hasEvent = $("#" + id).data("hasEvent");
+        if (hasEvent && !fromModal) {
+            return false;
+        }*/
+        /*$("#date-popover-content").html('You clicked on date ' + date);
+        $("#date-popover").show();*/
+        $("#myModal").html(createModal(id, date));
+        $('#adjust_modal').modal('show');
+        return true;
+    }
+
+    function myNavFunction(id) {
+        $("#date-popover").hide();
+        var nav = $("#" + id).data("navigation");
+        var to = $("#" + id).data("to");
+        console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+    }
+    function createModal(id, date) {
+    	var $modalHeaderButton = $('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>');
+        var $modalHeaderTitle = $('<h4 class="modal-title" id="header_modal_title">Title:</h4>');
+        var $modalHeader = $('<div class="modal-header"></div>');
+        var $modalHeaderInput = $('<input type="text" class="form-control" id="ipTitle" />');
+        var $modalBodyInput = $('<textarea style="resize:none" class="form-control" rows="5" id="content" ></textarea>');
+        var $modalBody = $('<div class="modal-body" id="modal_body"></div>');
+        var $modalBodyTitleSelect = $('<h4 class="modal-title" id="modal_title_select">Important:</h4>');
+        var $modalBodySelect = $('<select class="form-control" id="sel"><option value="0">No</option><option value="1">Yes</option></select>');
+        var $modalBodyTitle = $('<h4 class="modal-title" id="modal_title_content">Content:</h4>');
+        var $modalFooter = $('<div class="modal-footer" id="modal_footer"></div>');
+        var $modalFooterButtonSave = $('<button type="submit" id="btnSave" class="btn btn-success" data-dismiss="modal">Save</button>');
+        var $modalFooterButtonDelete = $('<button id="btnDelete" class="btn btn-danger" data-dismiss="modal">Delete</button>');
+        var $modalDate = $('<button hidden id="modalDate" value="'+date+'"></button>');
+        var $modalFooterAddOn = $('<div></div>');
+        var $modalContent = $('<div class="modal-content"></div>');
+        var $modalDialog = $('<div class="modal-dialog"></div>');
+        var $modalFade = $('<div class="modal fade" id="adjust_modal" tabindex="-1" role="dialog" aria-labelledby="modal_title" aria-hidden="true"></div>');
+        var $modalForm = $('<form id="modalForm"></form>');
+    	$.ajax({
+    		type: 'GET', 
+            url: 'handleEventChange', 
+            data: { "date": date }, 
+            success: function (results) {
+            	 $.each(results, function(k, v){
+            		 $("#ipTitle").val(v.title);
+            		 $("#content").val(v.body);
+            		 var important = v.badge;
+            		 if(important){
+            			 $("#sel").val('1');	 
+            		 } 
+            	 });
+            }
+    	});
+    	$modalHeader.append($modalHeaderButton);
+        $modalHeader.append($modalHeaderTitle);
+        $modalHeader.append($modalHeaderInput);
+        $modalFooter.append($modalFooterAddOn);
+        $modalBody.append($modalBodyTitle);
+        $modalBody.append($modalBodyInput);
+        $modalBody.append($modalBodyTitleSelect);
+        $modalBody.append($modalBodySelect);
+        $modalFooter.append($modalFooterButtonSave);
+        $modalFooter.append($modalFooterButtonDelete);
+        $modalContent.append($modalHeader);
+        $modalContent.append($modalBody);
+        $modalContent.append($modalFooter);
+        $modalDialog.append($modalContent);
+        $modalFade.append($modalDialog);
+        $modalFade.append($modalDate);
+        $modalFade.data('dateId', id);
+        $modalFade.attr("dateId", id);
+        $modalForm.append($modalFade);
+        return $modalForm;
+    } 
+</script>
+</head>
+<body>
+	<div id="date-popover" class="popover top" style="cursor: pointer; display: block; margin-left: 44%; margin-top: 50px; width: 175px;">
+        <div class="arrow"></div>
+        <h3 class="popover-title" style="display: none;"></h3>
+        <div id="date-popover-content" class="popover-content"></div>
+    </div>
+    <div class="row">
+		<div class="center-block" style="width: 300px; margin-top: 110px" id="my-calendar"></div>
+	</div>
+	<div id="myModal"></div>
+</body>
+</html>

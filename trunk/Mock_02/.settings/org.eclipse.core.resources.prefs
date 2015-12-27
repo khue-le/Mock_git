@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/views/common/header.jsp=UTF-8
+encoding//WebContent/WEB-INF/views/teacher_grid_home.jsp=UTF-8
+encoding//WebContent/css/entypo/entypo.css=UTF-8
+encoding//src/mock02/controller/ManageCourseController.java=UTF-8
+encoding//src/mock02/dao/ManageCourseDAO.java=UTF-8
+encoding//src/mock02/dao/ManageStudentDAO.java=UTF-8

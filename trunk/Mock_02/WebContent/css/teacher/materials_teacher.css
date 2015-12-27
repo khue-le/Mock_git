@@ -1,0 +1,47 @@
+.item_materials {
+	border: 1px solid #ccc;
+	background: #dff0d8;
+	padding: 10px;
+	border-radius: 4px;
+	font-size: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.item_discussion {
+	border: 1px solid #ccc;
+	background: #dff0d8;
+	padding: 10px;
+	border-radius: 4px;
+	font-size: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.list_lecture td {
+	text-align: left;
+}
+
+.list_lecture {
+	display: none;
+}
+
+.div_add_lecture {
+	text-align: center;
+	border-top: 1px solid #ccc;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+
+.form_add_lecture {
+	border: 1px solid #ccc;
+	padding: 25px;
+	margin-bottom: 20px;
+	display: none;
+}
+
+a{
+	cursor: pointer;
+}

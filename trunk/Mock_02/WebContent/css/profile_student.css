@@ -1,0 +1,21 @@
+  .profile_student td{
+			padding:6px;
+			
+			font-family: cursive;	
+		
+		}
+		.label_td{
+			text-align:right;
+		}
+		.content_td{
+			text-align:left;
+		}
+		.table_students{
+			margin-bottom:40px;
+		}
+		.table_students th{
+			text-align:left;
+		}
+		.table_students td{
+			text-align:left;
+		}

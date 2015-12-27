@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/teacher/teacher_layout.css">
+<link rel="stylesheet" href="./css/teacher/teacher_student.css">
+<script src="./js/jquery/jquery.min.js"></script>
+<script src="./js/bootstrap/bootstrap.min.js"></script>
+<script src="./js/js_layout.js"></script>
+<title>Detail Student-Teacher</title>
+<style>
+.profile_student td {
+	padding: 6px;
+	font-size: 18px;
+	font-family: cursive
+}
+
+.label_td {
+	text-align: right;
+}
+
+.content_td {
+	text-align: left;
+}
+
+.table_students {
+	font-size: 18px;
+}
+
+.table_students th {
+	text-align: left;
+}
+
+.table_students td {
+	text-align: left;
+}
+
+#btnBack {
+	margin-left: 20px;
+	margin-top: 20px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	width: 120px;
+	height: 50px;
+	background-color: #91c444;
+}
+
+#divInfo td {
+	padding-left: 40px;
+}
+</style>
+</head>
+<body>
+	<div class="navbar-fixed-top row header_title">
+		<div class="col-md-2 left_leaning">
+			<p class="p_leaning">E-Leaning</p>
+		</div>
+		<div class="col-md-2 left_leaning">
+			<select>
+				<option>--Select course--</option>
+				<option>Course 1</option>
+				<option>Course 2</option>
+				<option>Course 3</option>
+				<option>Course 4</option>
+			</select>
+		</div>
+		<div class="col-md-8 right_leaning">
+			<div class="dropdown icon_user">
+				<button class="custom_button dropdown-toggle" type="button" id="user_profile"
+					data-toggle="dropdown">
+					<img src="./images/users.png" />
+				</button>
+				<ul class="dropdown-menu dropdown_note pull-right" id="dropdown_user" role="menu"
+					aria-labelledby="user_profile">
+					<li role="presentation"><a role="menuitem" href="#">Profile</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Help</a></li>
+				</ul>
+			</div>
+			<div class="dropdown icon_bell">
+				<button class="custom_button dropdown-toggle" type="button" id="note_bell"
+					data-toggle="dropdown">
+					<img src="./images/bell.png" />
+				</button>
+				<ul class="dropdown-menu dropdown_note pull-right" id="dropdown_bell" role="menu"
+					aria-labelledby="note_bell">
+					<li role="presentation"><a role="menuitem" href="#">Empty</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2 navbar_teacher">
+			<div class="item_navbar_teacher">
+				<a href="./home_teacher_list.html" class="custom_button"><img
+					src="./images/home.png" />Home</a>
+			</div>
+			<div class="item_navbar_teacher ">
+				<a href="./course_teacher.html" class="custom_button"><img
+					src="./images/course.png" />Course</a>
+			</div>
+			<div class="item_navbar_teacher item_navbar_teacher_active">
+				<a href="./students_teacher.html" class="custom_button "><img
+					src="./images/student.png" />Students</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./materials_teacher.html" class="custom_button"><img
+					src="./images/resources.png" />Materials</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./assignment_teacher.html" class="custom_button"><img
+					src="./images/assignment.png" />Assignment</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./discussion_teacher.html" class="custom_button"><img
+					src="./images/discussion.png" />Discussion</a>
+			</div>
+		</div>
+		<div class="col-md-9 list_course">
+			<div class="title_list_course">
+				<span>Student's Profile </span>
+			</div>
+			<div class="row">
+				<div id="divInfo" class="col-md-5" style="margin-top: 30px;">
+					<table class="profile_student">
+						<tbody>
+							<tr>
+								<td class="label_td"><label>ID:</label></td>
+								<td class="content_td">12110234</td>
+							</tr>
+							<tr>
+								<td class="label_td"><label>Name:</label></td>
+								<td class="content_td">Tran Thi Bich Tram</td>
+							</tr>
+							<tr>
+								<td class="label_td"><label>DateBirth:</label></td>
+								<td class="content_td">10/10/1994</td>
+							</tr>
+							<tr>
+								<td class="label_td"><label>Email:</label></td>
+								<td class="content_td">tram@gmail.com</td>
+							</tr>
+							<tr>
+								<td class="label_td"><label>Phone:</label></td>
+								<td class="content_td">0909090909</td>
+							</tr>
+							<tr>
+								<td class="label_td"><label>OnlineTime:</label></td>
+								<td class="content_td">20h</td>
+							</tr>
+						</tbody>
+					</table>
+					<button id="btnBack" onclick="location.href='students_teacher.html';">Back</button>
+				</div>
+				<div class="col-md-7">
+					<table class="table table_students">
+						<thead>
+							<tr>
+								<th>Week</th>
+								<th>Assignment</th>
+								<th>Point</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="success">
+								<td>1</td>
+								<td>ass01_JSP.rar</td>
+								<td>7</td>
+
+							</tr>
+							<tr class="success">
+								<td>1</td>
+								<td>ass02_Servlet.rar</td>
+								<td>8</td>
+
+							</tr>
+							<tr class="success">
+								<td>3</td>
+								<td>ass01_hibernate.rar</td>
+								<td>6</td>
+							</tr>
+							<tr class="success">
+								<td>4</td>
+								<td>ass01_springMVC_part1.rar</td>
+								<td></td>
+							</tr>
+							<tr class="success">
+								<td>5</td>
+								<td>ass02_springMVC_part2.rar</td>
+								<td></td>
+							</tr>
+							<tr class="success">
+								<td>6</td>
+								<td>ass02_springMVC_part3.rar</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="user_online">
+		<div class="dropup pull-right">
+			<button id="btnChat" class="btn btn-default dropdown-toggle" type="button"
+				data-toggle="dropdown">
+				<img src="./images/chat.png" />(4)
+			</button>
+			<ul class="dropdown-menu list_user_online">
+				<li>Tran Thi Bich Tram</li>
+				<li>Nguyen Thai Ha</li>
+				<li>Trinh Hong Nhan</li>
+				<li>Le Nguyen Khue</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

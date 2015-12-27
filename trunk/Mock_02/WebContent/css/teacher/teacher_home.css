@@ -1,0 +1,67 @@
+.changeMode {
+	width: 85px;
+	padding: 0 0 5px 10px;
+}
+
+.footer {
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.item_grid_course {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	overflow-x: hidden;
+	overflow-y: -moz-scrollbars-none;
+	border: 1px solid #ccc;
+	height: 230px;
+	margin: 0 50px 50px;
+	font-family: cursive;
+	cursor: pointer;
+	font-size: 25px;
+	background: #FFFFFF;
+	color: #91c444;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.item_grid_course:hover {
+	background: #91c444;
+	color: #FFFFFF;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.imgadd:hover{
+	border: 2px solid;
+	border-color:#91c444;
+	background: #fff !important;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.course_name::-webkit-scrollbar {
+	width: 0px;
+}
+
+.course_name::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+
+.course_name::-webkit-scrollbar-thumb {
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+	background: #fff;
+	-webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0);
+}
+
+.course_name::-webkit-scrollbar-corner {
+	background: rgba(0, 0, 0, 0);
+}

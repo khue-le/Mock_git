@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="./css/teacher/teacher_layout.css">
+<link rel="stylesheet" href="./css/teacher/teacher_student.css">
+<script src="./js/jquery/jquery.min.js"></script>
+<script src="./js/bootstrap/bootstrap.min.js"></script>
+<script src="./js/js_layout.js"></script>
+<title>Students-Teacher</title>
+<style type="text/css">
+.modal .modal-body {
+	max-height: 420px;
+	overflow-y: auto;
+}
+</style>
+<script>
+	$(document).ready(function(e) {
+		var count = 0;
+		$("#student_add").click(function() {
+			count = count + 1;
+			if (count % 2 == 1) {
+				$("#form_create_student").slideDown("slow");
+			} else {
+				$("#form_create_student").slideUp("slow");
+			}
+		});
+		$("#btn_clear").click(function() {
+			$("#form_create_student").slideUp("slow");
+			count = count + 1;
+		});
+		$(document).on('click', '.fileUpload', function() {
+			$('input[type=file]').change(function(e) {
+				$in = $(this);
+				if ($in.val().length == 0)
+					$('#lbUpload').html('Select file list student');
+				else
+					$('#lbUpload').html($in.val().substring(12));
+			});
+		});
+		$(document).on('click', '#addExist', function() {
+			$('#myModal').modal('show');
+		});
+		$(document).on('click', '[type=checkbox]', function() {
+			var $length = $(":checkbox:checked").length;
+			$('#uploadFile').html($length + ' selected');
+		});
+		$(document).on('click', '#btnCancel', function() {
+			$('[type=checkbox]').prop('checked', false);
+			var $length = $(":checkbox:checked").length;
+			$('#uploadFile').html($length + ' selected');
+		});
+	});
+</script>
+</head>
+<body>
+	<div class="navbar-fixed-top row header_title">
+		<div class="col-md-2 left_leaning">
+			<p class="p_leaning">E-Leaning</p>
+		</div>
+		<!-- <div class="col-md-2 left_leaning">
+			<select>
+				<option>--Select course--</option>
+				<option>Course 1</option>
+				<option>Course 2</option>
+				<option>Course 3</option>
+				<option>Course 4</option>
+			</select>
+		</div> -->
+		<div class="col-md-8 right_leaning">
+			<div class="dropdown icon_user">
+				<button class="custom_button dropdown-toggle" type="button" id="user_profile"
+					data-toggle="dropdown">
+					<img src="./images/users.png" />
+				</button>
+				<ul class="dropdown-menu dropdown_note pull-right" id="dropdown_user" role="menu"
+					aria-labelledby="user_profile">
+					<li role="presentation"><a role="menuitem" href="#">Profile</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Logout</a></li>
+					<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Help</a></li>
+				</ul>
+			</div>
+			<div class="dropdown icon_bell">
+				<button class="custom_button dropdown-toggle" type="button" id="note_bell"
+					data-toggle="dropdown">
+					<img src="./images/bell.png" />
+				</button>
+				<ul class="dropdown-menu dropdown_note pull-right" id="dropdown_bell" role="menu"
+					aria-labelledby="note_bell">
+					<li role="presentation"><a role="menuitem" href="#">Empty</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="row content_body">
+		<div class="col-md-2 navbar_teacher">
+			<div class="item_navbar_teacher">
+				<a href="./home_teacher_list.html" class="custom_button"><img
+					src="./images/home.png" />Home</a>
+			</div>
+			<div class="item_navbar_teacher ">
+				<a href="./course_teacher.html" class="custom_button"><img
+					src="./images/course.png" />Course</a>
+			</div>
+			<div class="item_navbar_teacher item_navbar_teacher_active">
+				<a href="./students_teacher.html" class="custom_button "><img
+					src="./images/student.png" />Students</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./materials_teacher.html" class="custom_button"><img
+					src="./images/resources.png" />Materials</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./assignment_teacher.html" class="custom_button"><img
+					src="./images/assignment.png" />Assignment</a>
+			</div>
+			<div class="item_navbar_teacher">
+				<a href="./discussion_teacher.html" class="custom_button"><img
+					src="./images/discussion.png" />Discussion</a>
+			</div>
+		</div>
+		<div class="col-md-9 list_course">
+			<div class="title_list_course">
+				<span>List Students of Course 1</span>
+			</div>
+
+			<div style="margin-top: 20px;">
+				<table class="table table_students">
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>OnlineTime</th>
+							<th>Email</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="success">
+							<td>Tran Thi Bich Tram</td>
+							<td>20h</td>
+							<td>tram@gmail.com</td>
+							<td><a href="./studentdetail_teacher.html" class="btn btn-success"
+								type="button">Detail</a>
+								<button class="btn btn-danger" type="button">Remove</button></td>
+						</tr>
+						<tr class="success">
+							<td>Nguyen Thai Ha</td>
+							<td>30h</td>
+							<td>ha@gmail.com</td>
+							<td><a href="./studentdetail_teacher.html" class="btn btn-success"
+								type="button">Detail</a>
+								<button class="btn btn-danger" type="button">Remove</button></td>
+						</tr>
+						<tr class="success">
+							<td>Le Nguyen Khue</td>
+							<td>40h</td>
+							<td>khue@gmail.com</td>
+							<td><a href="./studentdetail_teacher.html" class="btn btn-success"
+								type="button">Detail</a>
+								<button class="btn btn-danger" type="button">Remove</button></td>
+						</tr>
+						<tr class="success">
+							<td>Trinh Hong Nhan</td>
+							<td>50h</td>
+							<td>nhan@gmail.com</td>
+							<td><a href="./studentdetail_teacher.html" class="btn btn-success"
+								type="button">Detail</a>
+								<button class="btn btn-danger" type="button">Remove</button></td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="div_add_student">
+					<button id="student_add" class="custom_button custom_button" type="button">
+						<img src="./images/add.png" />
+					</button>
+					<span class="item_course_add">Add new student</span>
+				</div>
+				<div id="form_create_student" class="form_create_student" style="display: none;">
+					<form role="form">
+						<div class="row">
+							<div class="form-group col-md-6" style="text-align: right;">
+								<div id="addExist" class="fileUpload btn btn-primary">
+									<span>Add exist student</span> <input id="uploadBtn" type="button" class="upload" />
+								</div>
+								<label id="uploadFile">0 selected</label>
+							</div>
+							<div class="form-group col-md-6" style="text-align: left; padding-left: 50px">
+								<div class="fileUpload btn btn-primary">
+									<span>Upload</span> <input id="uploadBtn" type="file" class="upload" />
+								</div>
+								<label id="lbUpload">Select file list student</label>
+							</div>
+						</div>
+						<div class="col-md-12" style="text-align: center; padding-top: 15px;">
+							<button style="margin-right: 20px; padding: 10px 20px 10px 20px;" type="submit"
+								class="btn btn-default btn-success">Add</button>
+							<button style="padding: 10px 20px 10px 20px;" type="reset" id="btn_clear"
+								class="btn btn-default btn-warning">Cancel</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="user_online">
+			<div class="dropup pull-right">
+				<button id="btnChat" class="btn btn-default dropdown-toggle" type="button"
+					data-toggle="dropdown">
+					<img src="./images/chat.png" />(4)
+				</button>
+				<ul class="dropdown-menu list_user_online">
+					<li>Tran Thi Bich Tram</li>
+					<li>Nguyen Thai Ha</li>
+					<li>Trinh Hong Nhan</li>
+					<li>Le Nguyen Khue</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="myModal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">List of students</h4>
+				</div>
+				<div class="modal-body">
+					<table class="table">
+						<thead>
+							<tr>
+								<th style="text-align: center;">Select</th>
+								<th style="text-align: center">ID</th>
+								<th style="text-align: center">Name</th>
+								<th style="text-align: center">Email</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" class=".chkbox" value="1" /></td>
+								<td>12110123</td>
+								<td>Nguyen Thai Ha</td>
+								<td>john@example.com</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" class=".chkbox" value="2" /></td>
+								<td>12110086</td>
+								<td>Le Nguyen Khue</td>
+								<td>mary@example.com</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" class=".chkbox" value="3" /></td>
+								<td>12110321</td>
+								<td>Trinh Hong Nhan</td>
+								<td>july@example.com</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button id="btnAdd" type="button" class="btn btn-success" data-dismiss="modal">Add</button>
+					<button id="btnCancel" type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

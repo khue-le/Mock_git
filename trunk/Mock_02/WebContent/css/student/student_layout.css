@@ -1,0 +1,152 @@
+.content_body{
+	width:100%;
+}
+
+.header_title{
+		border:1px solid #ccc;
+		background: #91c444;
+		color:#FFFFFF;
+		box-shadow: 0 5px 10px 0px rgba(69,69,69,0.7);
+		font-weight:700;
+		width:100%;
+		margin-left:0px !important;
+		margin-right:0px !important;
+		padding-top:7px;
+		padding-left:10px;
+		
+	}
+	.left_leaning{
+		border-right:1px solid #ccc;
+		font-size:24px;
+	}
+	.right_leaning{
+		padding-right:20px;
+	}
+	
+	.list_course{
+		margin-top:15px;
+		float:right; 
+		padding-left:30px;
+	}
+	.icon_bell{
+		float:right;
+	}
+	.icon_user{
+		float:right;
+	}
+	.p_leaning{
+		float:left;
+		font-family: cursive;
+	}
+	.course_item{
+		background:#dff0d8;
+		margin:8px;	
+		font-weight:300;
+		overflow: hidden;
+
+	}
+	.custom_button{
+		background:none;
+		outline:none;
+		border:none;
+		color:#fff;
+		font-family: cursive;
+		
+	}
+	.item_course_add{
+		color:#4CAF50;
+	}
+	.form_create_course{
+		margin:0px auto;
+		border:1px solid #ccc;
+		padding:20px;
+		margin-top:50px;
+		margin-bottom:30px;
+		background:#dff0d8;
+	}
+	.navbar_teacher{
+		font-size:20px;
+		padding:0px;
+		margin-top:60px;
+		background:#91c444;
+		
+	}
+	.item_navbar_teacher{
+		border:1px solid #ccc;
+		padding:15px;
+
+		
+	}
+	.custom_button img{
+		margin-right:8px;
+		width:25px;
+		height:25px;
+	}
+	.item_navbar_teacher_active{
+		background:#ABD99C;
+	}
+	.title_list_course{
+		margin-top:50px;
+		font-family:cursive;
+		font-size:24px;
+		text-align:center;
+		border-top:1px solid #ccc;
+		border-left:2px solid #ccc;
+		border-bottom:3px solid #ccc;
+		border-right:2px solid #ccc;
+		border-radius: 8px;
+		padding:8px;
+		color:#4C9E31;
+	}
+	.item_navbar_teacher:hover{
+		background:#ABD99C;
+		box-shadow: 0 5px 10px 0px rgba(69,69,69,0.7);
+	}
+	.icon_user:hover{
+		box-shadow: 0 5px 10px 0px rgba(69,69,69,0.7);
+	}
+	.icon_bell:hover{
+		box-shadow: 0 5px 10px 0px rgba(69,69,69,0.7);
+	}
+	.notice_bell{
+		    margin: 15px 0 0;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: normal;
+			clear: both;
+			border-top: 1px solid #eee;
+			padding-top: 10px;
+			right:0px;
+	}
+	.dropdown_note{
+		-webkit-appearance: none; 
+		-moz-appearance: none; 
+		color: #fff;
+		-webkit-border-radius: 5px;
+		border-radius: 5px;
+		font-size: 14px;
+		padding: 10px;
+		width: 35%;
+		cursor: pointer;
+	}
+	.fileUpload {
+		position: relative;
+		overflow: hidden;
+		margin: 10px;
+	}
+	.fileUpload input.upload {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin: 0;
+		padding: 0;
+		font-size: 20px;
+		cursor: pointer;
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+	@media screen and (min-width: 800px) {
+		body{
+			overflow:auto;
+		}
+	}
