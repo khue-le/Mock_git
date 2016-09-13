@@ -62,19 +62,8 @@ public class LoginController {
     @RequestMapping(value = "teacher_grid_home")
     String accessTeacherGridHome(ModelMap model, Authentication authentication,
 	    HttpServletRequest request,
-	    @ModelAttribute("fullname") String fullName) {
-	// get teacher when user login success and list teacher'course
-	User teacher = manageStudentService.getUser(authentication.getName());
-	request.getSession().setAttribute("teacher_cur", teacher);
-	List<Course> listcourse = manageStudentService.getListCourse(teacher);
-	request.setAttribute("List_Course", listcourse);
-
-	if (fullName.trim().length() == 0) {
-	    fullName = loginService.getFullName(authentication.getName());
-	    model.addAttribute("fullname", fullName);
-	}
-	return "teacher_grid_home";
-    }
+	    @ModelAttribute("fullname") String fullName) {}
+	//EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
     @RequestMapping(value = "teacher_list_home")
     String accessTeacherListHome(ModelMap model, Authentication authentication,
