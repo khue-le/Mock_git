@@ -55,15 +55,21 @@ public class LoginController {
 
     @RequestMapping(value = "loginfail")
     String handleLoginFail(ModelMap model) {
-	model.addAttribute("error", "Username or password is invalid");
+	model.addAttribute("error",
+			"Username or password is invalid");
 	return "login";
     }
+
+	AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
     @RequestMapping(value = "teacher_grid_home")
     String accessTeacherGridHome(ModelMap model, Authentication authentication,
 	    HttpServletRequest request,
-	    @ModelAttribute("fullname") String fullName) {}
-	//EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+	    @ModelAttribute("fullname") String fullName) {
+		//EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+    }
+
+		EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEA
 
     @RequestMapping(value = "teacher_list_home")
     String accessTeacherListHome(ModelMap model, Authentication authentication,
